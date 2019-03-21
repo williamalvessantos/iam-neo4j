@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  analytics:
+
+services:
+  neo4j:
+    restart: always
+    image: nome-sua-imagem
+    container_name: neo4j-apoc
+    volumes:
+      - ${PWD}/data:/data
+      - ${PWD}/plugins:/plugins
+    environment:
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - analytics
