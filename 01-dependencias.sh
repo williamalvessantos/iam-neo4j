@@ -8,11 +8,15 @@ mkdir -p plugins
       wget https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.5.0.2/apoc-3.5.0.2-all.jar
    popd
 
+mkdir ./local-package
+touch ./local-package/.sentinel
+
 # -------------------------------------------------------------------------------------------------
 # Check
 # -------------------------------------------------------------------------------------------------
 
-ls -lrt ./plugins
+ls -lart ./plugins
+ls -lart ./local-package
 
 # -------------------------------------------------------------------------------------------------
 exit 0
